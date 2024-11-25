@@ -4,6 +4,7 @@
         <column name="id" xsi:type="int" comment="ID" nullable="false" unsigned="true" identity="true" padding="10"/>
         <column name="content" xsi:type="text" nullable="false" comment="Content"/>
         <column name="is_enabled" xsi:type="boolean" nullable="false" default="false" comment="Status"/>
+        <column name="position" xsi:type="int" comment="Position" nullable="false" unsigned="false" padding="10" />
         <column name="created_at" xsi:type="datetime" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="Created At"/>
         <column name="updated_at" xsi:type="datetime" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated At"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">

@@ -63,6 +63,14 @@
                 </checkbox>
             </formElements>
         </field>
+        <field name="position" formElement="input">
+            <settings>
+                <label translate="true">Position</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
         <field name="content" formElement="input">
             <settings>
                 <label translate="true">Usp Content</label>

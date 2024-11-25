@@ -5,7 +5,8 @@
             "content": true,
             "is_enabled": true,
             "created_at": true,
-            "updated_at": true
+            "updated_at": true,
+            "position": true
         },
         "constraint": {
             "PRIMARY": true

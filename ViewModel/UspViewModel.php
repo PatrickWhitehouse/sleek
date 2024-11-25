@@ -15,6 +15,8 @@ class UspViewModel implements ArgumentInterface
     }
 
     /**
+     * Get USP collection
+     *
      * @return array
      */
     private function getUsps(): array
@@ -23,6 +25,8 @@ class UspViewModel implements ArgumentInterface
     }
 
     /**
+     * Get enabled USPs
+     *
      * @return array
      */
     public function getEnabledUsps(): array
@@ -30,7 +34,23 @@ class UspViewModel implements ArgumentInterface
         $usps = $this->getUsps();
         if (!empty($usps)) {
             return array_filter($usps, function ($usp) {
-               return $usp->getIsEnabled();
+                return $usp->getIsEnabled();
+            });
+        }
+        return $usps;
+    }
+
+    /**
+     * Get USPs based on position.
+     *
+     * @return array
+     */
+    public function getSortedUsps(): array
+    {
+        $usps = $this->getEnabledUsps();
+        if (!empty($usps)) {
+            uasort($usps, function ($a, $b) {
+                return $a->getPosition() <=> $b->getPosition();
             });
         }
         return $usps;
