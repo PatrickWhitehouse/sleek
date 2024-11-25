@@ -1,5 +1,5 @@
 {
-  "name": "cascade/module-sleek",
+  "name": "cascade-development/module-sleek",
   "version": "1.0.0",
   "description": "Add USP items through the Magento admin.",
   "type": "magento2-module",
