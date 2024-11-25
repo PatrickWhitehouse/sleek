@@ -9,7 +9,7 @@
     "magento/module-ui": "101.2.*"
   },
   "license": [
-    "proprietary"
+    "MIT"
   ],
   "autoload": {
     "files": [
