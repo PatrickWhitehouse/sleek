@@ -24,7 +24,7 @@ class Index extends Action implements HttpGetActionInterface
     /**
      * @return Page
      * */
-    public function execute()
+    public function execute(): Page
     {
        $page = $this->pageFactory->create();
        $page->setActiveMenu('Cascade_Sleek::usp');

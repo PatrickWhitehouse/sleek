@@ -20,7 +20,7 @@ class Delete extends Action implements HttpGetActionInterface
 
     public function __construct(
         Context                        $context,
-        private UspRepositoryInterface $uspRepository
+        protected UspRepositoryInterface $uspRepository
     )
     {
         parent::__construct($context);

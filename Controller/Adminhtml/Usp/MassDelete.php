@@ -7,6 +7,7 @@ use Magento\Backend\App\Action;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Cascade\Sleek\Model\ResourceModel\Usp\CollectionFactory;
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\ResultInterface;
 use Magento\Ui\Component\MassAction\Filter;
 use Magento\Backend\App\Action\Context;
 
@@ -24,7 +25,7 @@ class MassDelete extends Action implements HttpPostActionInterface
         parent::__construct($context);
     }
 
-    public function execute()
+    public function execute(): ResultInterface
     {
         $collection = $this->collectionFactory->create();
         $items = $this->filter->getCollection($collection);
