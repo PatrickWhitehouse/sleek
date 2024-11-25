@@ -1,0 +1,19 @@
+<?php
+declare(strict_types=1);
+
+use Cascade\Sleek\ViewModel\UspViewModel;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var UspViewModel $viewModel */
+$viewModel = $block->getViewModel();
+$usps = $viewModel->getEnabledUsps();
+if(!$usps) {
+    return '';
+}
+?>
+<ul>
+    <?php foreach($usps as $usp): ?>
+        <li><?= $usp->getContent() ?></li>
+    <?php endforeach;?>
+</ul>

@@ -38,13 +38,13 @@ class Save extends Action implements HttpPostActionInterface
     public function execute(): ResultInterface
     {
         $post = $this->getRequest()->getPost();
-        $isExistingPost = (int) $post->id;
+        $isExistingPost = $post->id;
         $usp = $this->usp->create();
         $redirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
 
         if ($isExistingPost) {
             try {
-                $usp = $this->uspRepository->getById($post->id);
+                $usp = $this->uspRepository->getById((int)$post->id);
             } catch (NoSuchEntityException $exception) {
                 $this->messageManager->addErrorMessage($exception->getMessage());
                 return $redirect->setPath('*/*/');
