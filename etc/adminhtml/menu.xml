@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="Cascade_Sleek::sleek"
+            title="Sleek"
+            translate="title"
+            module="Cascade_Sleek"
+            resource="Cascade_Sleek::sleek"
+            parent="Magento_Backend::content"
+            sortOrder="900"
+        />
+        <add
+            id="Cascade_Sleek::usp"
+            title="Usps"
+            translate="title"
+            module="Cascade_Sleek"
+            resource="Cascade_Sleek::usp"
+            parent="Cascade_Sleek::sleek"
+            action="sleek/usp"
+        />
+    </menu>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Cascade_Sleek::sleek" title="Sleek" translate="title" sortOrder="900">
+                        <resource id="Cascade_Sleek::usp" title="Usps" translate="title">
+                            <resource id="Cascade_Sleek::usp_save" title="Save Usp" translate="title" />
+                            <resource id="Cascade_Sleek::usp_delete" title="Delete Usp" translate="title" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
