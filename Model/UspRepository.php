@@ -30,7 +30,7 @@ class UspRepository implements UspRepositoryInterface
         return $usp;
     }
 
-    public function save(UspInterface $usp): UspInterface
+    public function save(UspInterface $usp): void
     {
         try {
             $this->uspResourceModel->save($usp);

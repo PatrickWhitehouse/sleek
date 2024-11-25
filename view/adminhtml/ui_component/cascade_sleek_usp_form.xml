@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
-<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">cascade_sleek_usp_form.cascade_sleek_usp_data_source</item>
         </item>
-        <item name="template" xsi:type="string">template/form/collapsible</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
     <settings>
         <namespace>cascade_sleek_usp_form</namespace>
@@ -12,6 +13,9 @@
         <deps>
             <dep>cascade_sleek_usp_form.cascade_sleek_usp_data_source</dep>
         </deps>
+        <buttons>
+            <button name="save" class="Cascade\Sleek\Block\Adminhtml\Usp\Edit\Button\Save"/>
+        </buttons>
     </settings>
     <dataSource name="cascade_sleek_usp_data_source">
         <argument name="data" xsi:type="array">
@@ -19,6 +23,9 @@
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
         <dataProvider class="Cascade\Sleek\Ui\DataProvider\Usp" name="cascade_sleek_usp_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
@@ -26,4 +33,43 @@
             </settings>
         </dataProvider>
     </dataSource>
+    <fieldset name="general">
+        <settings>
+            <collapsible>false</collapsible>
+            <label/>
+        </settings>
+        <field name="id" formElement="hidden"/>
+        <field name="is_enabled" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">usp</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>boolean</dataType>
+                <label translate="true">Is Enabled</label>
+                <visible>true</visible>
+                <dataScope>is_enabled</dataScope>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="content" formElement="input">
+            <settings>
+                <label translate="true">Usp Content</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
 </form>

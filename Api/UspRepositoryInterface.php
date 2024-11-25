@@ -24,10 +24,10 @@ interface UspRepositoryInterface {
 
     /**
      * @param UspInterface $usp
-     * @return UspInterface
+     * @return void
      * @throws LocalizedException
      */
-    public function save(UspInterface $usp): UspInterface;
+    public function save(UspInterface $usp): void;
 
     /**
      * @param int $id

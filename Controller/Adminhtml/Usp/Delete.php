@@ -18,6 +18,10 @@ class Delete extends Action implements HttpGetActionInterface
 {
     const ADMIN_RESOURCE = 'Cascade_Sleek::usp_delete';
 
+    /**
+     * @param Context $context
+     * @param UspRepositoryInterface $uspRepository
+     */
     public function __construct(
         Context                        $context,
         protected UspRepositoryInterface $uspRepository

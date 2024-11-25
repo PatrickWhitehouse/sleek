@@ -8,6 +8,8 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
 use Cascade\Sleek\Model\ResourceModel\Usp\CollectionFactory;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Ui\Component\MassAction\Filter;
 use Magento\Backend\App\Action\Context;
 
@@ -15,6 +17,12 @@ class MassDelete extends Action implements HttpPostActionInterface
 {
     const ADMIN_RESOURCE = 'Cascade_Sleek::usp_delete';
 
+    /**
+     * @param Context $context
+     * @param CollectionFactory $collectionFactory
+     * @param UspRepositoryInterface $uspRepository
+     * @param Filter $filter
+     */
     public function __construct(
         Context $context,
         protected CollectionFactory $collectionFactory,
@@ -25,6 +33,11 @@ class MassDelete extends Action implements HttpPostActionInterface
         parent::__construct($context);
     }
 
+    /**
+     * @return ResultInterface
+     * @throws LocalizedException
+     * @throws NoSuchEntityException
+     */
     public function execute(): ResultInterface
     {
         $collection = $this->collectionFactory->create();

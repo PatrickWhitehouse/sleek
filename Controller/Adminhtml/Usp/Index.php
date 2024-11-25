@@ -13,6 +13,10 @@ class Index extends Action implements HttpGetActionInterface
 {
     const ADMIN_RESOURCE = 'Cascade_Sleek::usp';
 
+    /**
+     * @param Context $context
+     * @param PageFactory $pageFactory
+     */
     public function __construct(
         Context $context,
         protected PageFactory $pageFactory
