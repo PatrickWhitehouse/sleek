@@ -15,7 +15,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 
 class Save extends Action implements HttpPostActionInterface
 {
-    const ADMIN_RESOURCE = 'Cascade_Sleek::usp_delete';
+    const ADMIN_RESOURCE = 'Cascade_Sleek::usp_save';
 
     /**
      * @param Context $context
