@@ -42,4 +42,14 @@ class Usp extends AbstractModel implements UspInterface
     {
         return $this->getData(self::UPDATED_AT);
     }
+
+    public function getPosition()
+    {
+        return $this->getData(self::POSITION);
+    }
+
+    public function setPosition($position)
+    {
+        return $this->setData(self::POSITION, $position);
+    }
 }

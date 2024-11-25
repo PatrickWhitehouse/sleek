@@ -14,6 +14,7 @@ interface UspInterface
     const ID = 'id';
     const CONTENT = 'content';
     const IS_ENABLED = 'is_enabled';
+    const POSITION = 'position';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -49,6 +50,17 @@ interface UspInterface
      * @return bool
      */
     public function setIsEnabled($isEnabled);
+
+    /**
+     * @return int
+     */
+    public function getPosition();
+
+    /**
+     * @param $position
+     * @return int
+     */
+    public function setPosition($position);
 
     /**
      * @return string
