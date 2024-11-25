@@ -1,7 +1,7 @@
 {
   "name": "cascade/module-sleek",
   "version": "1.0.0",
-  "description": "N/A",
+  "description": "Add USP items through the Magento admin.",
   "type": "magento2-module",
   "require": {
     "magento/framework": "*",
