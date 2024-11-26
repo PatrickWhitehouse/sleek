@@ -9,14 +9,12 @@ use Magento\Framework\View\Element\Template;
 /** @var UspViewModel $viewModel */
 /** @var UspInterface $usp */
 $viewModel = $block->getViewModel();
-
-$isEnabled = $viewModel->isEnabled();
 $backgroundColor = $viewModel->getBackgroundColor();
 $textColor = $viewModel->getTextColor();
 
 $usps = $viewModel->getSortedUsps();
 ?>
-<?php if ($isEnabled && $usps) : ?>
+<?php if ($usps) : ?>
     <ul class="usps">
         <?php foreach ($usps as $usp): ?>
             <li><?= $usp->getContent() ?></li>

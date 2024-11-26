@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block name="sleek.usps" template="Cascade_Sleek::usps.phtml" before="-">
+            <block name="sleek.usps" template="Cascade_Sleek::usps.phtml" before="-"
+                   ifconfig="cascade_development_sleek/general/enabled">
                 <arguments>
                     <argument name="view_model" xsi:type="object">Cascade\Sleek\ViewModel\UspViewModel</argument>
                 </arguments>
