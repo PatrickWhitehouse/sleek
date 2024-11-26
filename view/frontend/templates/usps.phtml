@@ -1,20 +1,34 @@
 <?php
 declare(strict_types=1);
 
+use Cascade\Sleek\Api\Data\UspInterface;
 use Cascade\Sleek\ViewModel\UspViewModel;
 use Magento\Framework\View\Element\Template;
 
 /** @var Template $block */
 /** @var UspViewModel $viewModel */
+/** @var UspInterface $usp */
 $viewModel = $block->getViewModel();
-$usps = $viewModel->getSortedUsps();
 
-if(!$usps) {
-    return '';
-}
+$isEnabled = $viewModel->isEnabled();
+$backgroundColor = $viewModel->getBackgroundColor();
+$textColor = $viewModel->getTextColor();
+
+$usps = $viewModel->getSortedUsps();
 ?>
-<ul>
-    <?php foreach($usps as $usp): ?>
-        <li><?= $usp->getContent() ?></li>
-    <?php endforeach;?>
-</ul>
+<?php if ($isEnabled && $usps) : ?>
+    <ul class="usps">
+        <?php foreach ($usps as $usp): ?>
+            <li><?= $usp->getContent() ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <?php if ($backgroundColor || $textColor): ?>
+        <style>
+            .usps {
+            <?php if ($backgroundColor): ?> background-color: <?= $backgroundColor ?>;<?php endif ;?>
+            <?php if ($textColor): ?> color: <?= $textColor ?>;<?php endif ;?>
+            }
+        </style>
+    <?php endif; ?>
+<?php endif; ?>

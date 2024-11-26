@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cascade_development_sleek>
+            <general>
+                <enabled>1</enabled>
+            </general>
+            <customisations>
+                <background_color>#EAEAEA</background_color>
+                <text_color>#000000</text_color>
+            </customisations>
+        </cascade_development_sleek>
+    </default>
+</config>

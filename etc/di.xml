@@ -15,4 +15,5 @@
     </type>
     <preference for="Cascade\Sleek\Api\Data\UspInterface" type="Cascade\Sleek\Model\Usp"/>
     <preference for="Cascade\Sleek\Api\UspRepositoryInterface" type="Cascade\Sleek\Model\UspRepository"/>
+    <preference for="Cascade\Sleek\Api\ModuleConfigurationInterface" type="Cascade\Sleek\Model\ModuleConfiguration"/>
 </config>

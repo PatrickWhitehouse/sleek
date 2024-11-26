@@ -3,15 +3,47 @@ declare(strict_types=1);
 
 namespace Cascade\Sleek\ViewModel;
 
+use Cascade\Sleek\Api\ModuleConfigurationInterface;
 use Cascade\Sleek\Model\ResourceModel\Usp\Collection;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class UspViewModel implements ArgumentInterface
 {
     public function __construct(
-        private Collection $collection,
+        protected Collection                   $collection,
+        protected ModuleConfigurationInterface $moduleConfiguration,
     )
     {
+    }
+
+    /**
+     * Get module status
+     *
+     * @return bool
+     */
+    public function isEnabled(): bool
+    {
+        return $this->moduleConfiguration->getIsEnabled();
+    }
+
+    /**
+     * Get background color
+     *
+     * @return string|null
+     */
+    public function getBackgroundColor(): string|null
+    {
+        return $this->moduleConfiguration->getBackgroundColor();
+    }
+
+    /**
+     * Get text color
+     *
+     * @return string|null
+     */
+    public function getTextColor(): string|null
+    {
+        return $this->moduleConfiguration->getTextColor();
     }
 
     /**
